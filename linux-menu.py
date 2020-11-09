@@ -25,6 +25,7 @@ while True:
         press 2: to run hadoop
         press 3: to run docker
         press 4: to run lvm partition
+	press 0: to exit
         """)
 
     x = input("enter your choice : ")
@@ -528,3 +529,6 @@ while True:
                     lvm_name = input("Enter your LVM name")
                     os.system("sudo lvextend --size +{} /dev/{}/{}".format(size,vg_name,lvm_name))
                     os.system("sudo resize2fs /dev/{}/{}".format(vg_name,lvm_name))
+		
+	elif int(x) == 0:
+		exit()
